@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-cream-50 text-charcoal-800 font-sans antialiased;
+    line-height: 1.5;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+    line-height: 1.2;
+  }
+  ::selection {
+    @apply bg-bronze-500/30;
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+  }
+  .container-wide {
+    @apply max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-charcoal-800 text-cream-50 px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-charcoal-900 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border border-charcoal-800/20 text-charcoal-800 px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-charcoal-800 hover:text-cream-50 active:scale-[0.98];
+  }
+  .btn-bronze {
+    @apply inline-flex items-center justify-center gap-2 bg-bronze-500 text-charcoal-900 px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-bronze-600 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 text-charcoal-800 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 hover:text-bronze-600;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 text-2xs font-medium tracking-wider uppercase;
+  }
+  .label-sm {
+    @apply text-2xs font-medium tracking-[0.18em] uppercase text-charcoal-800/50;
+  }
+  .input-luxe {
+    @apply w-full bg-transparent border-b border-charcoal-800/20 px-0 py-3 text-charcoal-800 placeholder-charcoal-800/30 focus:border-charcoal-800 focus:outline-none transition-colors duration-200;
+  }
+  .skeleton {
+    @apply bg-cream-200 animate-shimmer;
+    background-image: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    background-size: 1000px 100%;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-cream-300 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-sand-500; }
